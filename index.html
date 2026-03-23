@@ -1,10 +1,182 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Bates Solutions</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Name | Professional Website</title>
+  <style>
+    :root {
+      --primary: #213a5c;
+      --accent: #ef8a17;
+      --bg: #f7f8fa;
+      --text: #191e2d;
+      --content-width: 900px;
+      --rounded: 8px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 36px 0 22px 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0 0 10px 0;
+      font-size: 2.5em;
+      letter-spacing: 2px;
+    }
+    header p {
+      margin: 0;
+      font-size: 1.3em;
+      opacity: 0.85;
+    }
+    nav {
+      background: white;
+      box-shadow: 0 2px 4px #0001;
+    }
+    nav ul {
+      max-width: var(--content-width);
+      margin: 0 auto;
+      padding: 0;
+      display: flex;
+      list-style: none;
+      justify-content: center;
+    }
+    nav li {
+      margin: 0 14px;
+    }
+    nav a {
+      display: block;
+      color: var(--primary);
+      font-weight: 500;
+      text-decoration: none;
+      padding: 14px 6px;
+      border-bottom: 2px solid transparent;
+      transition: border 0.18s;
+    }
+    nav a:hover, nav a.active {
+      border-bottom: 2px solid var(--accent);
+    }
+    main {
+      max-width: var(--content-width);
+      margin: 36px auto;
+      padding: 0 18px;
+    }
+    section {
+      background: #fff;
+      margin-bottom: 30px;
+      border-radius: var(--rounded);
+      box-shadow: 0 1px 4px #0002;
+      padding: 32px 28px;
+      transition: box-shadow .18s;
+    }
+    section h2 {
+      color: var(--primary);
+      margin-top: 0;
+      font-size: 1.6em;
+    }
+    .contact-details {
+      font-size: 1.05em;
+      margin-top: 12px;
+    }
+    footer {
+      text-align: center;
+      color: #aaa;
+      padding: 20px 0 30px 0;
+      font-size: 1em;
+    }
+    @media (max-width: 600px) {
+      main { padding: 0 4vw; }
+      section { padding: 24px 10px; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Bates Solutions</h1>
-  <p>IT help, made simple.</p>
+  <header>
+    <h1 contenteditable="true">Your Name</h1>
+    <p contenteditable="true">Your Professional Title • eg. Web Developer, Designer, Consultant</p>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#about" class="active">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="about">
+      <h2 contenteditable="true">About Me</h2>
+      <div contenteditable="true">
+        <p>
+          Welcome! I'm an experienced [Your Profession]. I specialize in [Key Skills or Industry]. Passionate about [What drives you?].
+        </p>
+        <p>
+          I enjoy collaborating on projects that make a difference. Let's connect!
+        </p>
+      </div>
+    </section>
+    <section id="projects">
+      <h2 contenteditable="true">Selected Projects</h2>
+      <div contenteditable="true">
+        <ul>
+          <li>
+            <strong>Project Name 1:</strong> A brief description of a relevant project or accomplishment.
+          </li>
+          <li>
+            <strong>Project Name 2:</strong> Another project—describe your contribution, technologies used, impact, etc.
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section id="skills">
+      <h2 contenteditable="true">Skills &amp; Technologies</h2>
+      <div contenteditable="true">
+        <ul style="columns:2; max-width:450px;">
+          <li>Skill One</li>
+          <li>Skill Two</li>
+          <li>Skill Three</li>
+          <li>Skill Four</li>
+          <li>Skill Five</li>
+        </ul>
+      </div>
+    </section>
+    <section id="contact">
+      <h2 contenteditable="true">Contact</h2>
+      <div contenteditable="true" class="contact-details">
+        <p>
+          Email: <a href="mailto:your@email.com">your@email.com</a><br/>
+          LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">yourprofile</a>
+        </p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    &copy; <span id="year"></span> <span contenteditable="true">Your Name</span>. All rights reserved.
+  </footer>
+  <script>
+    // Highlight active nav link on scroll
+    const sections = document.querySelectorAll('main > section');
+    const navLinks = document.querySelectorAll('nav a');
+    window.addEventListener('scroll', () => {
+      let cur = sections[0];
+      let fromTop = scrollY + 70;
+      for (let sec of sections) {
+        if (sec.offsetTop <= fromTop) cur = sec;
+      }
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + cur.id);
+      });
+    });
+    // Auto-update year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

@@ -3,226 +3,206 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bates Solutions</title>
+  <title>Bates Solutions — Simple IT Help in Middle TN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #256857;
-      --accent: #ef8a17;
-      --bg: #f7f8fa;
-      --text: #191e2d;
-      --content-width: 900px;
-      --rounded: 8px;
+      --green: #1e5c46;
+      --green-mid: #256857;
+      --green-light: #3a8c6e;
+      --amber: #ef8a17;
+      --amber-light: #f7b35c;
+      --cream: #faf7f2;
+      --white: #ffffff;
+      --text: #1a1f2e;
+      --text-muted: #5a6070;
+      --radius: 12px;
     }
-    * { box-sizing: border-box; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Segoe UI', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: var(--primary);
-      color: white;
-      padding: 36px 0 22px 0;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0 0 10px 0;
-      font-size: 2.5em;
-      letter-spacing: 2px;
-    }
-    header p {
-      margin: 0;
-      font-size: 1.3em;
-      opacity: 0.94;
-      font-weight: 400;
-    }
-    nav {
-      background: white;
-      box-shadow: 0 2px 4px #0001;
-    }
-    nav ul {
-      max-width: var(--content-width);
-      margin: 0 auto;
-      padding: 0;
-      display: flex;
-      list-style: none;
-      justify-content: center;
-    }
-    nav li {
-      margin: 0 14px;
-    }
-    nav a {
-      display: block;
-      color: var(--primary);
-      font-weight: 500;
-      text-decoration: none;
-      padding: 14px 6px;
-      border-bottom: 2px solid transparent;
-      transition: border 0.18s;
-    }
-    nav a:hover, nav a.active {
-      border-bottom: 2px solid var(--accent);
-    }
-    main {
-      max-width: var(--content-width);
-      margin: 36px auto;
-      padding: 0 18px;
-    }
-    section {
-      background: #fff;
-      margin-bottom: 30px;
-      border-radius: var(--rounded);
-      box-shadow: 0 1px 4px #0002;
-      padding: 32px 28px;
-      transition: box-shadow .18s;
-    }
-    section h2 {
-      color: var(--primary);
-      margin-top: 0;
-      font-size: 1.6em;
-    }
-    .services-list {
-      padding: 0;
-      list-style: none;
-      margin: 12px 0 0 0;
-    }
-    .services-list li {
-      margin-bottom: 16px;
-      background: #eef2f3;
-      border-radius: 5px;
-      padding: 14px 14px 10px 14px;
-      box-shadow: 0 1px 3px #0001;
-      font-size: 1.08em;
-      line-height: 1.59;
-    }
-    .contact-details {
-      font-size: 1.15em;
-      margin-top: 12px;
-      line-height: 1.7;
-    }
-    .testimonial {
-      background: #f1f6f8;
-      border-left: 4px solid var(--accent);
-      margin: 20px 0 0 0;
-      padding: 18px 16px 10px 16px;
-      font-style: italic;
-      border-radius: 6px;
-      color: #2b3144;
-    }
-    footer {
-      text-align: center;
-      color: #aaa;
-      padding: 20px 0 30px 0;
-      font-size: 1em;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; }
+
+    .hero { background: var(--green); position: relative; overflow: hidden; padding: 100px 24px 80px; text-align: center; }
+    .hero::before, .hero::after { content: ''; position: absolute; border-radius: 50%; opacity: 0.08; background: var(--amber); }
+    .hero::before { width: 500px; height: 500px; top: -180px; right: -120px; }
+    .hero::after  { width: 300px; height: 300px; bottom: -120px; left: -60px; }
+    .hero-badge { display: inline-block; background: rgba(255,255,255,0.12); color: var(--amber-light); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; border: 1px solid rgba(239,138,23,0.35); margin-bottom: 28px; animation: fadeUp 0.6s ease both; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 7vw, 5rem); font-weight: 900; color: var(--white); line-height: 1.08; margin-bottom: 20px; animation: fadeUp 0.6s 0.1s ease both; }
+    .hero h1 span { color: var(--amber); }
+    .hero p { font-size: 1.15rem; color: rgba(255,255,255,0.78); max-width: 480px; margin: 0 auto 36px; line-height: 1.7; animation: fadeUp 0.6s 0.2s ease both; }
+    .hero-cta { display: inline-flex; align-items: center; gap: 10px; background: var(--amber); color: #fff; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 500; padding: 14px 30px; border-radius: 100px; text-decoration: none; transition: background 0.2s, transform 0.2s; animation: fadeUp 0.6s 0.3s ease both; box-shadow: 0 4px 20px rgba(239,138,23,0.4); }
+    .hero-cta:hover { background: #d47510; transform: translateY(-2px); }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.07); }
+    nav ul { max-width: 860px; margin: 0 auto; padding: 0 16px; display: flex; list-style: none; justify-content: center; gap: 4px; flex-wrap: wrap; }
+    nav a { display: block; color: var(--text-muted); font-weight: 400; font-size: 0.92rem; text-decoration: none; padding: 14px 12px; border-bottom: 2px solid transparent; transition: color 0.18s, border-color 0.18s; }
+    nav a:hover, nav a.active { color: var(--green); border-bottom-color: var(--amber); }
+
+    main { max-width: 860px; margin: 0 auto; padding: 56px 24px 24px; display: grid; gap: 28px; }
+
+    .card { background: var(--white); border-radius: var(--radius); padding: 40px 36px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.05); opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease, box-shadow 0.2s; }
+    .card.visible { opacity: 1; transform: none; }
+    .card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+    .card h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--green); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+    .card h2 .icon { width: 40px; height: 40px; background: #eef6f2; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+    .about-text p { line-height: 1.8; color: var(--text-muted); margin-bottom: 16px; font-size: 1.02rem; }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-text strong { color: var(--text); font-weight: 500; }
+
+    .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 8px; }
+    .service-item { background: #f5f8f6; border-radius: 10px; padding: 18px 16px; border-left: 3px solid var(--green-light); transition: border-color 0.2s, background 0.2s; }
+    .service-item:hover { background: #ecf4ef; border-left-color: var(--amber); }
+    .service-item strong { display: block; font-weight: 500; font-size: 0.96rem; color: var(--text); margin-bottom: 4px; }
+    .service-item span { font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; }
+
+    .tips-list { list-style: none; display: grid; gap: 14px; margin-top: 8px; }
+    .tips-list li { display: flex; gap: 14px; align-items: flex-start; padding: 16px; background: #fdf9f4; border-radius: 10px; border: 1px solid rgba(239,138,23,0.15); }
+    .tip-num { width: 28px; height: 28px; background: var(--amber); color: white; border-radius: 50%; font-weight: 500; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .tip-content strong { display: block; font-weight: 500; color: var(--text); margin-bottom: 2px; font-size: 0.97rem; }
+    .tip-content span { font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; }
+
+    .testimonials-grid { display: grid; gap: 16px; margin-top: 8px; }
+    .testimonial { background: #f5f8f6; border-left: 4px solid var(--amber); border-radius: 0 10px 10px 0; padding: 20px 20px 16px; }
+    .testimonial p { font-style: italic; color: var(--text-muted); line-height: 1.7; font-size: 0.98rem; margin-bottom: 10px; }
+    .testimonial cite { font-style: normal; font-weight: 500; font-size: 0.85rem; color: var(--green); }
+
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+    .contact-item { display: flex; align-items: center; gap: 14px; background: #f5f8f6; padding: 18px 16px; border-radius: 10px; }
+    .contact-icon { width: 42px; height: 42px; background: var(--green); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: white; }
+    .contact-item label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 2px; }
+    .contact-item a, .contact-item span { color: var(--text); font-weight: 500; font-size: 0.97rem; text-decoration: none; }
+    .contact-item a:hover { color: var(--amber); }
+    .contact-note { margin-top: 24px; padding: 18px 20px; background: #eef6f2; border-radius: 10px; color: var(--green-mid); font-size: 0.95rem; line-height: 1.6; }
+    .contact-note strong { font-weight: 500; }
+
+    footer { text-align: center; color: var(--text-muted); padding: 32px 24px 48px; font-size: 0.88rem; line-height: 1.7; border-top: 1px solid rgba(0,0,0,0.06); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+
     @media (max-width: 600px) {
-      main { padding: 0 4vw; }
-      section { padding: 24px 10px; }
+      .card { padding: 28px 20px; }
+      .hero { padding: 72px 20px 60px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1 contenteditable="true">Friendly IT Help</h1>
-    <p contenteditable="true">A neighborly helping hand for your computer and gadget problems</p>
-  </header>
-  <nav>
-    <ul>
-      <li><a href="#about" class="active">About</a></li>
-      <li><a href="#services">How I Can Help</a></li>
-      <li><a href="#tips">Simple Tips</a></li>
-      <li><a href="#testimonials">Stories</a></li>
-      <li><a href="#contact">Contact</a></li>
+
+<header class="hero">
+  <div class="hero-badge">Middle TN Area &nbsp;·&nbsp; Friendly &amp; Local</div>
+  <h1>Bates <span>Solutions</span></h1>
+  <p>Friendly, no-jargon IT help for real people. When tech gets confusing, I make it simple.</p>
+  <a href="#contact" class="hero-cta">
+    <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+    Get in Touch
+  </a>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#about" class="active">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#tips">Tips</a></li>
+    <li><a href="#testimonials">Stories</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section class="card" id="about">
+    <h2>
+      <span class="icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#256857" stroke-width="2"><circle cx="12" cy="8" r="4"/><path stroke-linecap="round" d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></span>
+      About Me
+    </h2>
+    <div class="about-text">
+      <p>Growing up, I naturally gravitated toward <strong>fixing and repairing things</strong>. I taught myself how to troubleshoot and resolve a wide range of computer issues — and found I genuinely enjoy it.</p>
+      <p>My goal is to help people resolve their technical issues <strong>without the stress and confusion</strong>. Using a computer can be frustrating, especially when you're not sure what's going wrong. With my experience, I can quickly identify and solve problems, making the whole process easier for you.</p>
+    </div>
+  </section>
+
+  <section class="card" id="services">
+    <h2>
+      <span class="icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#256857" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg></span>
+      How I Can Help
+    </h2>
+    <div class="services-grid">
+      <div class="service-item"><strong>💻 PC &amp; Laptop Troubleshooting</strong><span>Diagnosing startup errors, blue screens, or freezing and getting things running smoothly again.</span></div>
+      <div class="service-item"><strong>🧹 Cleaning Up Bloatware</strong><span>Removing unnecessary programs and junk files so your computer feels fast again.</span></div>
+      <div class="service-item"><strong>🛡️ Virus &amp; Malware Removal</strong><span>Clearing out pop-ups and viruses, then helping protect your computer going forward.</span></div>
+      <div class="service-item"><strong>🔧 Software &amp; Windows Updates</strong><span>Installing programs or updating Windows — I'll make sure everything's set up correctly.</span></div>
+      <div class="service-item"><strong>📡 Setting Up New Devices</strong><span>Got a new laptop, phone, printer, or Wi-Fi router? I'll connect everything and get you started.</span></div>
+      <div class="service-item"><strong>💾 Backing Up Important Files</strong><span>Simple ways to keep your family photos and documents safe from crashes.</span></div>
+      <div class="service-item" style="grid-column:1/-1"><strong>💬 Friendly Tech Advice</strong><span>Have a lingering tech question? Just ask — no question is too basic.</span></div>
+    </div>
+  </section>
+
+  <section class="card" id="tips">
+    <h2>
+      <span class="icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#256857" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></span>
+      Simple Tips
+    </h2>
+    <ul class="tips-list">
+      <li><div class="tip-num">1</div><div class="tip-content"><strong>Restart First</strong><span>Many small computer issues are fixed just by restarting — it's the oldest trick for good reason!</span></div></li>
+      <li><div class="tip-num">2</div><div class="tip-content"><strong>Keep Software Updated</strong><span>Updates aren't just new features — they patch security holes that bad actors actively look for.</span></div></li>
+      <li><div class="tip-num">3</div><div class="tip-content"><strong>Beware of Suspicious Emails</strong><span>If you didn't expect it, don't click it. When in doubt, call the company using a number you look up yourself.</span></div></li>
+      <li><div class="tip-num">4</div><div class="tip-content"><strong>Back Up Your Stuff</strong><span>Use an external drive or cloud service for photos and documents. Hard drives can fail without warning.</span></div></li>
     </ul>
-  </nav>
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <div>
-        <p>
-          Growing up, I naturally gravitated toward fixing and repairing things. I taught myself how to troubleshoot and resolve a wide range of computer issues.
-        </p>
-        <p>
-          My goal is to help people resolve their technical issues. Using a computer can be frustrating - especially when you’re not sure what’s going wrong. With my experience, I’m able to quickly identify and solve problems, making the process easier and less stressful.
-        </p>
+  </section>
+
+  <section class="card" id="testimonials">
+    <h2>
+      <span class="icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#256857" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg></span>
+      What People Say
+    </h2>
+    <div class="testimonials-grid">
+      <div class="testimonial"><p>"Joseph was so patient and never made me feel bad for not knowing things. He fixed my laptop and showed me how to keep it running well. Would absolutely recommend!"</p><cite>— Local customer, Murfreesboro</cite></div>
+      <div class="testimonial"><p>"Finally someone who explains tech in plain English. He cleaned up my computer and it runs like it's brand new. Very trustworthy and reasonably priced."</p><cite>— Local customer, Middle TN</cite></div>
+    </div>
+  </section>
+
+  <section class="card" id="contact">
+    <h2>
+      <span class="icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#256857" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></span>
+      Get in Touch
+    </h2>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="contact-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+        <div><label>Email</label><a href="mailto:josephfbates@gmail.com">josephfbates@gmail.com</a></div>
       </div>
-    </section>
-    <section id="services">
-      <h2>How I Can Help</h2>
-      <ul class="services-list">
-        <li>
-          <strong>PC &amp; Laptop Troubleshooting</strong><br>
-          Diagnosing problems (like startup errors, blue screens, or freezing) and getting things running smoothly again.
-        </li>
-        <li>
-          <strong>Cleaning up bloatware</strong><br>
-          Removing unnecessary programs, cleaning up junk files, and helping you get your computer running fast.
-        </li>
-        <li>
-          <strong>Virus &amp; Malware Removal</strong><br>
-          Clearing out annoying pop-ups and viruses, and helping protect your computer in the future.
-        </li>
-        <li>
-          <strong>Software Installation &amp; Updates</strong><br>
-          Need help installing new programs or updating Windows? I’ll make sure everything’s set up right.
-        </li>
-        <li>
-          <strong>Setting Up New Devices</strong><br>
-          Got a new laptop, phone, printer, or Wi-Fi? I’ll help you connect everything and get started.
-        </li>
-        <li>
-          <strong>Backing Up Important Files</strong><br>
-          I’ll show you simple ways to keep your family photos and documents safe from crashes.
-        </li>
-        <li>
-          <strong>Friendly Tech Advice</strong><br>
-          Have a question lingering? Ask away!
-        </li>
-      </ul>
-    </section>
-    <section id="tips">
-      <h2>Simple Tips</h2>
-      <div>
-        <ul>
-          <li><b>Restart First:</b> Many small computer issues are fixed just by restarting your device!</li>
-          <li><b>Keep your software updated:</b> Updates can fix bugs and keep you secure.</li>
-          <li><b>Beware of suspicious emails:</b> If you didn’t expect it, don’t click it.</li>
-          <li><b>Back up your stuff:</b> Use an external drive or cloud service for photos and important files.</li>
-        </ul>
+      <div class="contact-item">
+        <div class="contact-icon"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+        <div><label>Location</label><span>Middle TN Area</span></div>
       </div>
-    </section>
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <div class="contact-details">
-        <p>
-          Let’s chat about your tech trouble!<br>
-          <b>Email:</b> <a href="mailto:josephfbates@gmail.com">josephfbates@gmail.com</a><br>
-          <b>Location:</b> Middle TN Area<br>
-        </p>
-      </div>
-    </section>
-  </main>
-  <footer>
-    &copy; <span id="year"></span> <span contenteditable="true">Friendly IT Help</span>. Always happy to help.
-  </footer>
-  <script>
-    // Highlight active nav link on scroll
-    const sections = document.querySelectorAll('main > section');
-    const navLinks = document.querySelectorAll('nav a');
-    window.addEventListener('scroll', () => {
-      let cur = sections[0];
-      let fromTop = scrollY + 70;
-      for (let sec of sections) {
-        if (sec.offsetTop <= fromTop) cur = sec;
-      }
-      navLinks.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === '#' + cur.id);
-      });
-    });
-    // Auto-update year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    </div>
+    <div class="contact-note"><strong>Ready to get your tech sorted?</strong> Send me an email describing the issue and I'll get back to you promptly. No jargon, no pressure — just friendly, honest help.</div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; <span id="year"></span> Bates Solutions &nbsp;·&nbsp; Middle Tennessee</p>
+  <p style="margin-top:6px;font-size:0.82rem;opacity:0.7;">Always happy to help.</p>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const cards = document.querySelectorAll('.card');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  cards.forEach(c => obs.observe(c));
+  const sections = document.querySelectorAll('main > .card');
+  const navLinks = document.querySelectorAll('nav a');
+  window.addEventListener('scroll', () => {
+    let cur = sections[0];
+    const fromTop = scrollY + 90;
+    for (let sec of sections) { if (sec.offsetTop <= fromTop) cur = sec; }
+    navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + cur.id));
+  }, { passive: true });
+</script>
 </body>
 </html>

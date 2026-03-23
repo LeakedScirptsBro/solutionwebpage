@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Name | Professional Website</title>
+  <title>IT Solutions | Empowering Your Business</title>
   <style>
     :root {
       --primary: #213a5c;
@@ -35,7 +35,7 @@
     header p {
       margin: 0;
       font-size: 1.3em;
-      opacity: 0.85;
+      opacity: 0.90;
     }
     nav {
       background: white;
@@ -82,9 +82,38 @@
       margin-top: 0;
       font-size: 1.6em;
     }
+    .services-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      padding: 0;
+      list-style: none;
+      margin: 16px 0 0 0;
+    }
+    .services-list li {
+      flex: 1 1 270px;
+      background: #f1f4f8;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px #0001;
+      padding: 18px 18px 16px 18px;
+      min-width: 210px;
+    }
     .contact-details {
-      font-size: 1.05em;
+      font-size: 1.12em;
       margin-top: 12px;
+    }
+    .client-logos {
+      display: flex; gap: 24px; justify-content: center; align-items: center; flex-wrap: wrap;
+      margin: 18px 0 0 0;
+    }
+    .client-logos img {
+      max-height: 44px;
+      filter: grayscale(1);
+      opacity: 0.8;
+      height: auto;
+      width: auto;
+      max-width: 120px;
+      margin-bottom: 10px;
     }
     footer {
       text-align: center;
@@ -92,74 +121,112 @@
       padding: 20px 0 30px 0;
       font-size: 1em;
     }
+    @media (max-width: 800px) {
+      .services-list { flex-direction: column; gap: 20px; }
+    }
     @media (max-width: 600px) {
       main { padding: 0 4vw; }
       section { padding: 24px 10px; }
+      .client-logos { flex-direction: column; gap: 12px; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1 contenteditable="true">Your Name</h1>
-    <p contenteditable="true">Your Professional Title • eg. Web Developer, Designer, Consultant</p>
+    <h1 contenteditable="true">IT Solutions</h1>
+    <p contenteditable="true">Empowering Businesses with Innovative IT Services</p>
   </header>
   <nav>
     <ul>
       <li><a href="#about" class="active">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
+      <li><a href="#services">Our Services</a></li>
+      <li><a href="#clients">Clients</a></li>
+      <li><a href="#team">Our Team</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
   <main>
     <section id="about">
-      <h2 contenteditable="true">About Me</h2>
-      <div contenteditable="true">
+      <h2>About Us</h2>
+      <div>
         <p>
-          Welcome! I'm an experienced [Your Profession]. I specialize in [Key Skills or Industry]. Passionate about [What drives you?].
+          Welcome to IT Solutions! We deliver comprehensive IT consulting, development, and support services for businesses of all sizes. Our mission is to bridge technology and business, enabling our clients to thrive in a digital world.
         </p>
         <p>
-          I enjoy collaborating on projects that make a difference. Let's connect!
+          From streamlined infrastructure to innovative custom software, our expert team ensures your success at every step.
         </p>
       </div>
     </section>
-    <section id="projects">
-      <h2 contenteditable="true">Selected Projects</h2>
-      <div contenteditable="true">
-        <ul>
-          <li>
-            <strong>Project Name 1:</strong> A brief description of a relevant project or accomplishment.
-          </li>
-          <li>
-            <strong>Project Name 2:</strong> Another project—describe your contribution, technologies used, impact, etc.
-          </li>
-        </ul>
+    <section id="services">
+      <h2>Our Services</h2>
+      <ul class="services-list">
+        <li>
+          <strong>Managed IT Services</strong>
+          <p>Comprehensive IT support, maintenance, and monitoring for smooth, secure business operations.</p>
+        </li>
+        <li>
+          <strong>Cloud Solutions</strong>
+          <p>Migrate, manage, and optimize your business in the cloud with scalable and secure cloud technologies.</p>
+        </li>
+        <li>
+          <strong>Cybersecurity</strong>
+          <p>Protect your business from cyber threats with our advanced security strategies and solutions.</p>
+        </li>
+        <li>
+          <strong>Custom Software Development</strong>
+          <p>Bespoke applications tailored to your unique needs, from web platforms to mobile apps.</p>
+        </li>
+        <li>
+          <strong>IT Consulting</strong>
+          <p>Strategic guidance and planning to align your technology with your business objectives.</p>
+        </li>
+        <li>
+          <strong>Network Infrastructure</strong>
+          <p>Design, deployment, and optimization of robust, scalable network solutions.</p>
+        </li>
+      </ul>
+    </section>
+    <section id="clients">
+      <h2>Our Clients</h2>
+      <div>
+        <p>
+          We’re proud to have partnered with organizations across various industries, delivering transformative IT solutions tailored to their needs.
+        </p>
+        <div class="client-logos">
+          <img src="https://dummyimage.com/100x40/ddd/999&text=Client+1" alt="Client 1" />
+          <img src="https://dummyimage.com/100x40/ddd/999&text=Client+2" alt="Client 2" />
+          <img src="https://dummyimage.com/100x40/ddd/999&text=Client+3" alt="Client 3" />
+        </div>
       </div>
     </section>
-    <section id="skills">
-      <h2 contenteditable="true">Skills &amp; Technologies</h2>
-      <div contenteditable="true">
-        <ul style="columns:2; max-width:450px;">
-          <li>Skill One</li>
-          <li>Skill Two</li>
-          <li>Skill Three</li>
-          <li>Skill Four</li>
-          <li>Skill Five</li>
+    <section id="team">
+      <h2>Our Team</h2>
+      <div>
+        <p>
+          Our experienced, passionate professionals are dedicated to delivering reliable and innovative IT solutions. Meet the specialists driving your success!
+        </p>
+        <ul style="columns:2; max-width:450px; margin:0;">
+          <li>Ali - CEO &amp; IT Strategist</li>
+          <li>Maria - Lead Software Engineer</li>
+          <li>Rahul - Cloud Architect</li>
+          <li>Fatima - Cybersecurity Analyst</li>
         </ul>
       </div>
     </section>
     <section id="contact">
-      <h2 contenteditable="true">Contact</h2>
-      <div contenteditable="true" class="contact-details">
+      <h2>Contact Us</h2>
+      <div class="contact-details">
         <p>
-          Email: <a href="mailto:your@email.com">your@email.com</a><br/>
-          LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">yourprofile</a>
+          Email: <a href="mailto:info@itsolutions.com">info@itsolutions.com</a><br/>
+          Phone: <a href="tel:+1234567890">+1 (234) 567-890</a><br/>
+          Office: 123 IT Avenue, Tech City<br/>
+          LinkedIn: <a href="https://linkedin.com/company/itsolutions" target="_blank">IT Solutions</a>
         </p>
       </div>
     </section>
   </main>
   <footer>
-    &copy; <span id="year"></span> <span contenteditable="true">Your Name</span>. All rights reserved.
+    &copy; <span id="year"></span> <span contenteditable="true">IT Solutions</span>. All rights reserved.
   </footer>
   <script>
     // Highlight active nav link on scroll

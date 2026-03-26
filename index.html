@@ -52,6 +52,21 @@
     .about-text p:last-child { margin-bottom: 0; }
     .about-text strong { color: var(--text); font-weight: 500; }
 
+    /* ── Services Section ── */
+    .services-category { margin-bottom: 28px; }
+    .services-category:last-child { margin-bottom: 0; }
+    .services-category-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 2px solid #eef6f2; }
+    .services-category-header .cat-icon { font-size: 1.4rem; }
+    .services-category-header h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--green); }
+    .services-category-header p { font-size: 0.88rem; color: var(--text-muted); margin-top: 2px; }
+    .sub-services { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .sub-service { background: #f5f8f6; border-radius: 10px; padding: 14px 16px; border-left: 3px solid var(--green-light); transition: border-color 0.2s, background 0.2s; }
+    .sub-service:hover { background: #ecf4ef; border-left-color: var(--amber); }
+    .sub-service strong { display: block; font-weight: 500; font-size: 0.94rem; color: var(--text); margin-bottom: 3px; }
+    .sub-service span { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+    .sub-service.full-width { grid-column: 1 / -1; }
+
+    /* old services grid kept for "How I Can Help" */
     .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 8px; }
     .service-item { background: #f5f8f6; border-radius: 10px; padding: 18px 16px; border-left: 3px solid var(--green-light); transition: border-color 0.2s, background 0.2s; }
     .service-item:hover { background: #ecf4ef; border-left-color: var(--amber); }
@@ -86,6 +101,7 @@
       .card { padding: 28px 20px; }
       .hero { padding: 72px 20px 60px; }
       .services-grid { grid-template-columns: 1fr; }
+      .sub-services { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -106,6 +122,7 @@
   <ul>
     <li><a href="#about" class="active">About</a></li>
     <li><a href="#services">Services</a></li>
+    <li><a href="#how-i-help">How I Help</a></li>
     <li><a href="#tips">Tips</a></li>
     <li><a href="#testimonials">Stories</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -120,11 +137,132 @@
     </h2>
     <div class="about-text">
       <p>Growing up, I naturally gravitated toward <strong>fixing and repairing things</strong>. I taught myself how to troubleshoot and resolve a wide range of computer issues - and found I genuinely enjoy it.</p>
-      <p>My goal is to help people resolve their technical issues <strong>without the stress and confusion</strong>. As a<strong> A+ certified technician</strong>, I can help you out with any issue posing a problem. Using a computer can be frustrating, especially when you're not sure what's going wrong. With my experience, I can quickly identify and solve problems, making the whole process easier for you.</p>
+      <p>My goal is to help people resolve their technical issues <strong>without the stress and confusion</strong>. As an <strong>A+ certified technician</strong>, I can help you out with any issue posing a problem. Using a computer can be frustrating, especially when you're not sure what's going wrong. With my experience, I can quickly identify and solve problems, making the whole process easier for you.</p>
     </div>
   </section>
 
+  <!-- ══════════════════════════════════════
+       NEW SERVICES SECTION
+  ══════════════════════════════════════ -->
   <section class="card" id="services">
+    <h2>
+      <span class="icon">
+        <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#256857" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 21h8M12 17v4"/></svg>
+      </span>
+      Services
+    </h2>
+
+    <!-- Troubleshooting -->
+    <div class="services-category">
+      <div class="services-category-header">
+        <span class="cat-icon">🔍</span>
+        <div>
+          <h3>Troubleshooting</h3>
+          <p>Diagnosing and fixing problems — hardware or software</p>
+        </div>
+      </div>
+      <div class="sub-services">
+        <div class="sub-service">
+          <strong>Hardware Troubleshooting</strong>
+          <span>Diagnosing failing components, overheating issues, power problems, bad RAM, hard drive errors, and other physical hardware faults.</span>
+        </div>
+        <div class="sub-service">
+          <strong>Software Troubleshooting</strong>
+          <span>Resolving crashes, error messages, slow performance, corrupted files, driver conflicts, and application issues.</span>
+        </div>
+        <div class="sub-service">
+          <strong>Blue Screen &amp; Startup Errors</strong>
+          <span>Identifying the root cause of BSODs, boot loops, and systems that won't start up correctly.</span>
+        </div>
+        <div class="sub-service">
+          <strong>Network &amp; Connectivity Issues</strong>
+          <span>Fixing Wi-Fi drops, slow internet, devices that won't connect, and router/modem configuration problems.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PC Building -->
+    <div class="services-category">
+      <div class="services-category-header">
+        <span class="cat-icon">🖥️</span>
+        <div>
+          <h3>PC Building</h3>
+          <p>Custom builds from the ground up, tailored to your needs and budget</p>
+        </div>
+      </div>
+      <div class="sub-services">
+        <div class="sub-service">
+          <strong>Custom PC Assembly</strong>
+          <span>Selecting compatible parts and assembling a custom desktop built specifically for your use case — gaming, work, creative, or general use.</span>
+        </div>
+        <div class="sub-service">
+          <strong>Component Upgrades</strong>
+          <span>Upgrading RAM, adding an SSD, swapping out a GPU, or any other hardware upgrade to extend your machine's life.</span>
+        </div>
+        <div class="sub-service">
+          <strong>Parts Advice &amp; Budgeting</strong>
+          <span>Not sure what to buy? I'll walk you through your options and help you get the most out of your budget.</span>
+        </div>
+        <div class="sub-service">
+          <strong>OS Installation &amp; Setup</strong>
+          <span>Installing Windows, configuring drivers, and making sure your new build is ready to use right out of the box.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Maintenance & Security -->
+    <div class="services-category">
+      <div class="services-category-header">
+        <span class="cat-icon">🛡️</span>
+        <div>
+          <h3>Maintenance &amp; Security</h3>
+          <p>Keeping your computer healthy, fast, and protected</p>
+        </div>
+      </div>
+      <div class="sub-services">
+        <div class="sub-service">
+          <strong>Virus &amp; Malware Removal</strong>
+          <span>Clearing out infections, pop-ups, and unwanted programs, then setting up protection to keep them away.</span>
+        </div>
+        <div class="sub-service">
+          <strong>PC Cleanup &amp; Optimization</strong>
+          <span>Removing bloatware, clearing junk files, and tuning startup settings so your computer feels fast again.</span>
+        </div>
+        <div class="sub-service full-width">
+          <strong>Data Backup &amp; Recovery</strong>
+          <span>Setting up automatic backups so your photos, documents, and important files are always safe — and recovering data when things go wrong.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Setup & Support -->
+    <div class="services-category">
+      <div class="services-category-header">
+        <span class="cat-icon">📦</span>
+        <div>
+          <h3>Setup &amp; Support</h3>
+          <p>Getting new devices ready and answering your everyday tech questions</p>
+        </div>
+      </div>
+      <div class="sub-services">
+        <div class="sub-service">
+          <strong>New Device Setup</strong>
+          <span>Setting up laptops, desktops, printers, phones, and smart home devices so everything works together from day one.</span>
+        </div>
+        <div class="sub-service">
+          <strong>Software Installation</strong>
+          <span>Installing, updating, or configuring programs — from Microsoft Office to specialty applications.</span>
+        </div>
+        <div class="sub-service full-width">
+          <strong>Friendly Tech Advice</strong>
+          <span>No question is too basic. If something has been bugging you or you're not sure what to buy, just ask — I'll give you a straight, honest answer.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- "How I Can Help" kept as its own quick-reference card -->
+  <section class="card" id="how-i-help">
     <h2>
       <span class="icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#256857" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg></span>
       How I Can Help
